@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sean | Audit & Data Analytics Portfolio</title>
+<meta name="description" content="Portfolio of Sean, accounting student applying audit and analytics techniques to financial data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f3ec; --surface:#fffdf8; --ink:#1c2321; --muted:#5d6763;
+  --line:#e2ddd1; --accent:#1f5f4a; --accent-soft:#e3eee8; --gold:#b8862b;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121615; --surface:#1a201e; --ink:#ecebe5; --muted:#9aa49f;
+    --line:#2b3330; --accent:#6fc2a2; --accent-soft:#1f2e28; --gold:#d9a74a;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.mono{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:Fraunces,serif;font-weight:700;font-size:20px;text-decoration:none}
+.logo span{color:var(--accent)}
+nav ul{display:flex;gap:24px;list-style:none}
+nav ul a{text-decoration:none;font-size:14px;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+@media(max-width:700px){nav ul{display:none}}
+
+/* hero */
+.hero{padding:88px 0 72px}
+.hero h1{font-size:clamp(38px,7vw,68px);font-weight:700;margin:16px 0 20px;max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lead{font-size:18px;color:var(--muted);max-width:56ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-1px)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:56px}
+.stats div{background:var(--surface);padding:20px}
+.stats b{display:block;font-family:Fraunces,serif;font-size:28px}
+.stats span{font-size:13px;color:var(--muted)}
+@media(max-width:600px){.stats{grid-template-columns:1fr}}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(28px,4.5vw,42px);margin:12px 0 32px;max-width:22ch}
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
+.about-grid p{color:var(--muted);margin-bottom:14px}
+.pillars{display:grid;gap:12px}
+.pillar{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.pillar h3{font-size:18px;margin:4px 0}
+.pillar p{font-size:14px;color:var(--muted);margin:0}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr}}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column}
+.card .top{display:flex;justify-content:space-between;align-items:center}
+.num{font-family:Fraunces,serif;font-size:32px;color:var(--line)}
+.badge{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.badge.wip{background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--gold)}
+.card h3{font-size:22px;margin:14px 0 16px}
+.card dl{display:grid;gap:12px;margin-bottom:18px}
+.card dt{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.card dd{font-size:15px}
+.figs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.figs span{font-size:13px;border:1px dashed var(--line);border-radius:8px;padding:6px 10px}
+.figs b{color:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
+.tags span{font-size:12px;padding:3px 9px;border-radius:6px;background:var(--bg);border:1px solid var(--line)}
+.card a.link{margin-top:18px;font-weight:600;font-size:14px;color:var(--accent);text-decoration:none}
+.card a.link:hover{text-decoration:underline}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.skill{border-top:2px solid var(--accent);padding-top:16px}
+.skill h3{font-size:20px;margin-bottom:6px}
+.skill p{font-size:14px;color:var(--muted);margin-bottom:12px}
+
+/* timeline */
+.tl{display:grid;gap:16px}
+.tl-item{display:grid;grid-template-columns:150px 1fr;gap:20px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.tl-item h3{font-size:19px}
+.tl-item p{font-size:14px;color:var(--muted)}
+@media(max-width:600px){.tl-item{grid-template-columns:1fr;gap:6px}}
+
+/* certificates carousel */
+.carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 12px;scrollbar-width:none}
+.carousel::-webkit-scrollbar{display:none}
+.cert{flex:0 0 min(440px,88%);scroll-snap-align:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.cert-img{aspect-ratio:4/3;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cert-img img{width:100%;height:100%;object-fit:contain;cursor:zoom-in}
+.cert-img .ph{font-size:13px;color:var(--muted);text-align:center;padding:20px}
+.cert-body{padding:20px 22px 24px}
+.cert-body h3{font-size:20px;margin:6px 0 4px}
+.cert-body p{font-size:14px;color:var(--muted)}
+.cert-body a{display:inline-block;margin-top:12px;font-size:14px;font-weight:600;color:var(--accent);text-decoration:none;margin-right:14px}
+.car-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:20px}
+.car-nav button{width:48px;height:48px;border-radius:50%;border:1px solid var(--ink);background:none;color:var(--ink);font-size:20px;cursor:pointer}
+.dots{display:flex;gap:10px}
+.dots span{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.dots span.on{background:var(--ink)}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:90vh;border-radius:8px}
+
+/* contact */
+.contact{text-align:center}
+.contact h2{margin:12px auto 16px}
+.contact p{color:var(--muted);max-width:52ch;margin:0 auto}
+.contact .btns{justify-content:center}
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#home">Sean<span>.</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap">
+    <div class="mono">Accounting · Audit Analytics</div>
+    <h1>Where <em>accounting</em> meets data.</h1>
+    <p class="lead">Final-year Bachelor of Accounting (Hons) student at Universiti Malaysia Sabah. My projects apply audit and analytics techniques to financial data, starting with Malaysian public finance.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">Explore my work ↓</a>
+      <a class="btn" href="https://github.com/seanchrstain" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn" href="https://www.linkedin.com/in/seanchristain" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <div class="stats">
+      <div><b>02</b><span>Portfolio projects</span></div>
+      <div><b>Python · SQL</b><span>Core analysis tools</span></div>
+      <div><b>3</b><span>Languages: BM, English, Mandarin</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="mono">01 — About me</div>
+    <h2>An accountant's eye for detail, applied to data.</h2>
+    <div class="about-grid">
+      <div>
+        <p>I'm Sean, an accounting student from Tuaran, Sabah. Accounting trained me to reconcile every figure back to its source; data analytics lets me apply that discipline at scale.</p>
+        <p>My projects work with public, verifiable data. I clean it, reconcile it against official totals, and test it using techniques auditors rely on. I frame results as areas worth a closer look, not conclusions they can't support.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><div class="mono">Method</div><h3>Reconcile first</h3><p>Every dataset is checked against its source before any analysis.</p></div>
+        <div class="pillar"><div class="mono">Focus</div><h3>Audit analytics</h3><p>Tests like Benford's Law that flag what deserves review.</p></div>
+        <div class="pillar"><div class="mono">Mindset</div><h3>Honest findings</h3><p>Clear caveats and neutral wording over overclaiming.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="mono">02 — Selected projects</div>
+    <h2>Audit techniques on real public data.</h2>
+    <div class="projects">
+
+      <article class="card">
+        <div class="top"><span class="num">01</span><span class="badge">Completed · Oct 2026</span></div>
+        <h3>Malaysian Federal Spending: Benford's Law Audit Analysis</h3>
+        <dl>
+          <div><dt>Question</dt><dd>Does Malaysia's federal operating expenditure follow the digit pattern expected of naturally occurring financial data?</dd></div>
+          <div><dt>Output</dt><dd>Cleaned and reconciled data.gov.my expenditure records, SQL trend analysis, and a Benford first-digit test showing no suspicious digit spikes.</dd></div>
+        </dl>
+        <div class="figs">
+          <span><b>414</b> rows · 1980–2025</span>
+          <span>MAD <b>0.0122</b></span>
+          <span>Salaries <b>≈31%</b> of spending</span>
+        </div>
+        <div class="tags"><span>Python</span><span>pandas</span><span>SQLite</span><span>Matplotlib</span><span>Benford's Law</span></div>
+        <a class="link" href="https://github.com/seanchrstain/malaysia-federal-spending-benford" target="_blank" rel="noopener">View project on GitHub ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="top"><span class="num">02</span><span class="badge wip">In progress</span></div>
+        <h3>Pan Borneo Highway: Auditor-General's Report Analysis</h3>
+        <dl>
+          <div><dt>Question</dt><dd>What do the Sabah and Sarawak chapters of the Auditor-General's Report (LKAN 2/2026) reveal about delays and compliance across work packages?</dd></div>
+          <div><dt>Output</dt><dd>Datasets extracted from the Malay-language report and verified value by value against the source. Risk-flag and delay-cause analysis to follow.</dd></div>
+        </dl>
+        <div class="figs">
+          <span><b>35</b> Sabah work packages</span>
+          <span><b>11</b> Sarawak work packages</span>
+        </div>
+        <div class="tags"><span>Python</span><span>pandas</span><span>pdfplumber</span><span>Jupyter</span><span>Text analysis</span></div>
+        <a class="link" href="#projects">GitHub link coming soon</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="mono">03 — Capabilities</div>
+    <h2>Tools I use from source to finding.</h2>
+    <div class="skills">
+      <div class="skill"><h3>Data preparation</h3><p>Clean, structure and reconcile data to official totals.</p><div class="tags"><span>Python</span><span>pandas</span><span>Excel</span><span>PDF extraction</span></div></div>
+      <div class="skill"><h3>Analysis</h3><p>Query, summarise and test for patterns.</p><div class="tags"><span>SQL</span><span>SQLite</span><span>Benford's Law</span><span>Trend analysis</span></div></div>
+      <div class="skill"><h3>Communication</h3><p>Turn results into clear, careful write-ups.</p><div class="tags"><span>Matplotlib</span><span>Jupyter</span><span>GitHub</span><span>Reporting</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="mono">04 — Education & certifications</div>
+    <h2>Accounting foundations, data skills on top.</h2>
+    <div class="tl">
+      <div class="tl-item"><div class="mono">Present</div><div><h3>Bachelor of Accounting (Hons)</h3><p>Universiti Malaysia Sabah · CGPA 3.79 </p></div></div>
+      <div class="tl-item"><div class="mono">Completed</div><div><h3>Diploma in Accountancy</h3><p>Politeknik Kota Kinabalu · CGPA 3.95 </p></div></div>
+      <div class="tl-item"><div class="mono">Oct 2026</div><div><h3>IBM Data Analyst Professional Certificate</h3><p>Coursera · Python, SQL, data visualisation, capstone project</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="certificates">
+  <div class="wrap">
+    <div class="mono">05 — Certifications</div>
+    <h2>Learning that builds analytical foundations.</h2>
+
+    <!-- To add a certificate: copy one <div class="cert"> block, change the image path, title and links. -->
+    <div class="carousel" id="carousel">
+
+      <div class="cert">
+        <div class="cert-img">
+          <img src="certificates/ibm-data-analyst.png" alt="IBM Data Analyst Professional Certificate"
+               onerror="this.outerHTML='<div class=ph>Add image: certificates/ibm-data-analyst.png</div>'">
+        </div>
+        <div class="cert-body">
+          <div class="mono">IBM · Professional Certificate</div>
+          <h3>IBM Data Analyst Professional Certificate</h3>
+          <p>Coursera · Completed Oct 2026</p>
+          <a href="https://coursera.org/verify/professional-cert/V66NLDG9RN95" target="_blank" rel="noopener">Verify on Coursera ↗</a>
+          <a href="https://www.credly.com/badges/7e2ecbbe-b17c-4ce2-afc4-46c643261ae0" target="_blank" rel="noopener">Credly badge ↗</a>
+        </div>
+      </div>
+
+      <div class="cert">
+        <div class="cert-img">
+          <img src="certificates/sql-data-science.png" alt="Databases and SQL for Data Science with Python certificate"
+               onerror="this.outerHTML='<div class=ph>Add image: certificates/sql-data-science.png</div>'">
+        </div>
+        <div class="cert-body">
+          <div class="mono">IBM · Course Certificate</div>
+          <h3>Databases and SQL for Data Science with Python</h3>
+          <p>Coursera · Completed Oct 2026</p>
+          <a href="https://coursera.org/verify/A709IB6UR1C4" target="_blank" rel="noopener">Verify on Coursera ↗</a>
+        </div>
+      </div>
+
+      <div class="cert">
+        <div class="cert-img">
+          <img src="certificates/capstone.png" alt="IBM Data Analyst Capstone Project certificate"
+               onerror="this.outerHTML='<div class=ph>Add image: certificates/capstone.png</div>'">
+        </div>
+        <div class="cert-body">
+          <div class="mono">IBM · Course Certificate</div>
+          <h3>IBM Data Analyst Capstone Project</h3>
+          <p>Coursera · Completed Oct 2026</p>
+          <a href="https://coursera.org/verify/KYX52SPM7K5L" target="_blank" rel="noopener">Verify on Coursera ↗</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="car-nav">
+      <button id="prev" aria-label="Previous">←</button>
+      <div class="dots" id="dots"></div>
+      <button id="next" aria-label="Next">→</button>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox"><img alt=""></div>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="mono">06 — Let's connect</div>
+    <h2>Open to audit and data opportunities.</h2>
+    <p>I'm interested in internships and graduate roles in audit, accounting and data analytics. Based in Sabah, Malaysia.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:schristain01@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/seanchristain" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn" href="https://github.com/seanchrstain" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>© 2026 Sean. Built with HTML &amp; CSS.</span><a href="#home">Back to top ↑</a></div>
+</footer>
+
+<script>
+(function(){
+  var car=document.getElementById('carousel'), dots=document.getElementById('dots');
+  var cards=car.querySelectorAll('.cert');
+  cards.forEach(function(_,i){var d=document.createElement('span');if(!i)d.className='on';dots.appendChild(d);});
+  function idx(){var w=cards[0].offsetWidth+20;return Math.round(car.scrollLeft/w);}
+  function go(i){i=Math.max(0,Math.min(cards.length-1,i));car.scrollTo({left:cards[i].offsetLeft-car.offsetLeft-(car.clientWidth-cards[i].offsetWidth)/2,behavior:'smooth'});}
+  document.getElementById('prev').onclick=function(){go(idx()-1)};
+  document.getElementById('next').onclick=function(){go(idx()+1)};
+  car.addEventListener('scroll',function(){var i=idx();dots.querySelectorAll('span').forEach(function(d,j){d.className=j===i?'on':''});});
+  var lb=document.getElementById('lightbox');
+  car.addEventListener('click',function(e){if(e.target.tagName==='IMG'){lb.querySelector('img').src=e.target.src;lb.classList.add('open');}});
+  lb.onclick=function(){lb.classList.remove('open')};
+})();
+</script>
+</body>
+</html>
